@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1E3A8A; /* Royal Blue */
+  --color-primary-light: #2563EB; /* Blue 600 */
+  --color-primary-dark: #1E40AF; /* Blue 800 */
+  --color-accent: #16A34A; /* Lime/Kelly Green */
+  --color-accent-light: #22C55E; /* Green 500 */
+  --color-accent-dark: #15803D; /* Green 700 */
+  
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-sans), sans-serif; /* Keep to simple sans for corporate look */
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-700 font-sans selection:bg-primary/20 selection:text-primary-dark antialiased overflow-x-hidden;
+}
